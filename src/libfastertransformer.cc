@@ -254,6 +254,8 @@ std::shared_ptr<AbstractTransformerModel> ModelState::ModelFactory(
   const int         pp         = param_get_int(param, "pipeline_para_size");
   const int         custom_ar  = param_get_int(param, "enable_custom_all_reduce");
 
+  LOG_MESSAGE(TRITONSERVER_LOG_INFO, ("model_dir: " + model_dir).c_str());
+
   const std::string dt_message = std::string("Invalid configuration argument 'data_type': ") + data_type;
 
   if (model_type == "GPT") {
